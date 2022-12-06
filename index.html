@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+      <!-- Bootstrap-Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+<style>
+    .green {
+        color:lightgreen;
+    }
+    .red {
+        color:lightcoral;
+    }
+    .blue {
+        color:skyblue
+    }
+    #itemList { font-size: 1.5rem;}
+    .show { display: block;}
+    .hide { display: none;}
+</style>
+</head>
+<body>
+    <!-- Container Class -->
+<div class="container">
+    <div class="row">
+        <div class="col mx-auto col-md-8 mt-3 text-center">
+        <div class="alert align-items-center" id="message"></div> <!--use it to display an alert on updation deletion or value not correct-->
+        <form id="itemForm" >
+
+          <h3 class=""> TO DO LIST</h3> <!--FORM HEADER -->
+            <div class="input-group mb-3">
+                <!-- INPUT-BOX-CREATION -->
+                <input type="text" class="form-control"  id="itemInput" value="" placeholder="Enter a TO-DO Task">
+                <button class="btn btn-outline-primary">ADD ITEM</button>
+            </div>
+        </form>
+
+        <!-- Creating "All" "TO-DO" "COMPLETED" -->
+        <ul class="nav nav-tabs">
+            <li class="nav-item" data-type="all">
+              <a class="nav-link active" href="#">All</a>
+            </li>
+            <li class="nav-item" data-type="todo">
+              <a class="nav-link" href="#">To Do</a>
+            </li>
+            <li class="nav-item" data-type="done">
+              <a class="nav-link" href="#">Completed</a>
+            </li>
+          </ul>
+        <!-- Adding to-do to the DOM -->
+        <ul class="list-group list-group-flush" id="itemList">
+            <li></li> 
+        </ul>
+        <input type="hidden" id="filterType" value="all">
+        <input type="hidden" id="citem" value="">
+        <!-- ye tab type ko hidden rkhne ke lie hai taaki kisi bhi tab se value update ya delete ya edit kr skain -->
+        </div>
+    </div>
+   
+</div>
+<script src="main.js"></script>
+</body>
+</html>
